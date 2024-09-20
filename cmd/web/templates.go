@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/edbar42/snippetbox/pkg/forms"
 	"github.com/edbar42/snippetbox/pkg/models"
 )
 
@@ -14,6 +15,7 @@ func humanDate(t time.Time) string {
 
 type templateData struct {
 	CurrentYear int
+	Form        *forms.Form
 	Snippet     *models.Snippet
 	Snippets    []*models.Snippet
 }
