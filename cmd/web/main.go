@@ -12,6 +12,7 @@ import (
 	"github.com/edbar42/snippetbox/pkg/models/mysql"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/golangcollege/sessions"
+	"github.com/joho/godotenv"
 )
 
 type application struct {
@@ -23,8 +24,14 @@ type application struct {
 }
 
 func main() {
-	addr := flag.String("addr", ":42069", "HTTP network address for the server")
-	dsn := flag.String("dsn", "web:asdf@/snippetbox?parseTime=true", "MySQL database")
+	var envVars map[string]string
+	envVars, err := godotenv.Read()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	addr := flag.String("addr", envVars["PORT"], "HTTP network address for the server")
+	dsn := flag.String("dsn", envVars["DSN"], "MySQL database")
 	secret := flag.String("secret", makeSessionKey(), "Secret key")
 	flag.Parse()
 
