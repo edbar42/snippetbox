@@ -25,7 +25,7 @@ type application struct {
 func main() {
 	addr := flag.String("addr", ":42069", "HTTP network address for the server")
 	dsn := flag.String("dsn", "web:asdf@/snippetbox?parseTime=true", "MySQL database")
-	secret := flag.String("secret", "4f3b2d1e5f8c9a7e4d1a2b3c8e6f5d4a", "Secret key")
+	secret := flag.String("secret", makeSessionKey(), "Secret key")
 	flag.Parse()
 
 	infoLog := log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime)

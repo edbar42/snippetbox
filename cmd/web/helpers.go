@@ -2,6 +2,8 @@ package main
 
 import (
 	"bytes"
+	"crypto/rand"
+	"encoding/base64"
 	"fmt"
 	"net/http"
 	"runtime/debug"
@@ -46,4 +48,15 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 	}
 
 	buf.WriteTo(w)
+}
+
+func makeSessionKey() string {
+	b := make([]byte, 32)
+	_, err := rand.Read(b)
+	if err != nil {
+		return "4f3b2d1e5f8c9a7e4d1a2b3c8e6f5d4a"
+	}
+
+	key := base64.URLEncoding.EncodeToString(b)
+	return key
 }
