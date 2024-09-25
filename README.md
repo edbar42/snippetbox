@@ -20,4 +20,4 @@ All pull requests should be submitted to the main branch.
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## :pray: Acknowledgements
-Thanks to Alex Edwards for illustrating the development process for this app in his book [Let's Go!](https://lets-go.alexedwards.net/)
+Thanks to [Alex Edwards](https://www.alexedwards.net/) for illustrating the development process for this app in his book [Let's Go!](https://lets-go.alexedwards.net/)
