@@ -1,1 +1,4 @@
 .env
+
+# Add tls certs to git ignore
+tls/
