@@ -2,7 +2,6 @@ package mysql
 
 import (
 	"database/sql"
-	"strings"
 
 	"github.com/edbar42/snippetbox/pkg/models"
 	"github.com/go-sql-driver/mysql"
@@ -24,7 +23,7 @@ func (m *UserModel) Insert(name, email, password string) error {
 	_, err = m.DB.Exec(statement, name, email, string(hashedPassword))
 	if err != nil {
 		if mysqlErr, ok := err.(*mysql.MySQLError); ok {
-			if mysqlErr.Number == 1062 && strings.Contains(mysqlErr.Message, "unique constraint") {
+			if mysqlErr.Number == 1062 {
 				return models.ErrDuplicateEmail
 			}
 		}
