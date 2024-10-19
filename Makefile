@@ -10,6 +10,10 @@ build:
 run: build
 	./snippetbox
 
+# Run test suite
+test:
+	go test -v ./cmd/web
+
 # Generate TLS certificates
 tls:
 	@echo "Checking if Go is installed..."
