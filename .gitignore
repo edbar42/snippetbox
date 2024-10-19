@@ -2,3 +2,6 @@
 
 # Add tls certs to git ignore
 tls/
+
+# Built binary for server
+snippetbox
