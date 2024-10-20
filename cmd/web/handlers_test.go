@@ -6,8 +6,8 @@ import (
 )
 
 func TestPing(t *testing.T) {
-	app := newTestApplication()
-	ts := newTestServer(app.routes())
+	app := newTestApplication(t)
+	ts := newTestServer(t, app.routes())
 	defer ts.Close()
 
 	code, _, body := ts.get(t, "/ping")
