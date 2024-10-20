@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -10,8 +10,8 @@ import (
 
 func TestPing(t *testing.T) {
 	app := &application{
-		errorLog: log.New(ioutil.Discard, "", 0),
-		infoLog:  log.New(ioutil.Discard, "", 0),
+		errorLog: log.New(io.Discard, "", 0),
+		infoLog:  log.New(io.Discard, "", 0),
 	}
 
 	ts := httptest.NewTLSServer(app.routes())
@@ -28,7 +28,7 @@ func TestPing(t *testing.T) {
 
 	defer rs.Body.Close()
 
-	body, err := ioutil.ReadAll(rs.Body)
+	body, err := io.ReadAll(rs.Body)
 	if err != nil {
 		t.Fatal(err)
 	}
