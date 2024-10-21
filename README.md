@@ -47,7 +47,7 @@ make clean
 ### Testing
 To run the test suite shipped with the app, run `make test`.
 
-```bash
+```
 make test
 ```
 
