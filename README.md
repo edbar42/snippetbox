@@ -45,7 +45,7 @@ make clean
 ```
 
 ### Testing
-To run the test suite shipped with the app, run `make test`.
+To run the **full** test suite shipped with the app, run `make test`.
 
 ```
 make test
