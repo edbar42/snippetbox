@@ -12,7 +12,7 @@ run: build
 
 # Run test suite
 test:
-	go test -v ./cmd/web
+	go test -v ./cmd/web ./pkg/models/mysql/
 
 # Generate TLS certificates
 tls:
