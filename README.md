@@ -9,6 +9,8 @@ At the moment, the server can only handle HTTPS requests using self-signed certi
 - [MySQL](https://dev.mysql.com/downloads/installer/) (or [MariaDB](https://mariadb.com/kb/en/where-to-download-mariadb/))
 - [Make](https://www.gnu.org/software/make/)
 
+### Configuring the database
+
 ### Running the app
 Clone this repository:
 
@@ -21,6 +23,14 @@ Go to the directory where you cloned the app in and install its Go dependencies:
 ```bash
 go mod tidy
 ```
+Run the `make env` to generate a template `.env` file for the project.
+
+```bash
+make env
+```
+
+Be sure to edit that .env file to suit your database.
+
 Run the `make tls` script to generate self-signed TLS certificates for the HTTPS server:
 
 ```bash

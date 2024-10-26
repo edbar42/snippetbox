@@ -10,6 +10,10 @@ build:
 run: build
 	./snippetbox
 
+# Make env file for project
+env:
+	./pkg/scripts/make_env.sh
+
 # Run test suite
 test:
 	go test -v ./cmd/web ./pkg/models/mysql/
