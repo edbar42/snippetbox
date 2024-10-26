@@ -29,7 +29,9 @@ Run the `make env` to generate a template `.env` file for the project.
 make env
 ```
 
-Be sure to edit that .env file to suit your database.
+Be sure to edit that .env file to suit your database setup.
+
+You may then run the SQL scripts under [`pkg/db/migrations/mysql/`](./pkg/db/migrations/mysql/).
 
 Run the `make tls` script to generate self-signed TLS certificates for the HTTPS server:
 
