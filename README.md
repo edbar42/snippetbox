@@ -1,15 +1,15 @@
 # Snippetbox
 Snippetbox is a web application designed to store and manage user-submitted code snippets. It leverages Go's templating engine for dynamic HTML rendering and utilizes MySQL for data storage. 
 
-At the moment, the server can only handle HTTPS requests using self-signed certificates.
+The server uses self-signed certificates to handle HTTPS requests. 
+
+The script to generate these certificates comes embedded with the Go toolchain (see the [Makefile](./Makefile) under `tls` for details).
 
 ## ✨ Usage
 ### Pre-requisites
 - [Go](https://go.dev/dl/) 
 - [MySQL](https://dev.mysql.com/downloads/installer/) (or [MariaDB](https://mariadb.com/kb/en/where-to-download-mariadb/))
 - [Make](https://www.gnu.org/software/make/)
-
-### Configuring the database
 
 ### Running the app
 Clone this repository:
