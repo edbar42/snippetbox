@@ -1,7 +1,7 @@
 # Snippetbox
-Snippetbox is a web application designed to store and manage user-submitted code snippets. It leverages Go's templating engine for dynamic HTML rendering and utilizes MySQL for data storage. 
+Snippetbox is a web application designed to store and manage user-submitted snippets. It leverages Go's templating engine for dynamic HTML rendering and utilizes MySQL for data storage.
 
-The server uses self-signed certificates to handle HTTPS requests. 
+The server uses self-signed certificates to handle HTTPS requests.
 
 The script to generate these certificates comes embedded with the Go toolchain (see the [Makefile](./Makefile) under `tls` for details).
 
